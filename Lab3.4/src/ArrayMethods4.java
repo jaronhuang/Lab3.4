@@ -15,4 +15,17 @@ public class ArrayMethods4
 	{
 		
 	}
+	
+	public static int findMedian(int[] list1, int front, int back)
+	{
+		int[] nList;
+		nList = new int[back - front];
+		int pos = 0;
+		for (int i = front; i < back; i++)
+		{
+			list1[i] = nList[pos];
+			pos++;
+		}
+		return 1;
+	}
 }
