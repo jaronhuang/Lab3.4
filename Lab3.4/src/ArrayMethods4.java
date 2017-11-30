@@ -4,36 +4,47 @@ public class ArrayMethods4
 {
 	public static void main(String[] args)
 	{
-		int[] list = {1, 7, 4, 3, 8, 2, 9};
-		partition(list, 2, 4);
-		printArray(list);
+		int[] list = {1, 7, 4, 3, 8, 2, 9}; //7, 4, 3, 8, 2
+		partition(list, 0, 6);
 	}
 	
 	public static void partition(int[] list1, int front, int back)
 	{
 		list1 = Arrays.copyOfRange(list1, front, back);
 		
-		/*int pivotPos = (back - front) / 2;
+		int pivotPos = (back - front) / 2;
 		
-		for (int i = 0; i < pivotPos; i++)
+		printArray(list1);
+		
+		System.out.println("pivot position: " + pivotPos + " value: " + list1[pivotPos]);
+		
+		for (int i = pivotPos + 1; i < list1.length; i++)
 		{
-			if (list1[i] > list1[pivotPos])
+			if (list1[i] < list1[pivotPos])
 			{
-				for (int j = pivotPos + 1; j < list1.length; j++)
+				for (int j = 0; j < pivotPos; j++)
 				{
-					if (list1[j] < list1[pivotPos])
+					if (list1[i] > list1[pivotPos])
 					{
 						swap(list1, i, j);
 					}
+					else
+					{
+						swap(list1, i, pivotPos);
+						pivotPos = i;
+					}
 				}
 			}
-		}*/
+		}
+		
+		printArray(list1);
 	}
 	
 	public static void quickSort(int[] list1, int front, int back)
 	{
 		
 	}
+	
 	
 
 	/**
