@@ -5,7 +5,7 @@ public class ArrayMethods4
 	public static void main(String[] args)
 	{
 		int[] list = {1, 7, 4, 3, 8, 2, 9}; //7, 4, 3, 8, 2
-		partition(list, 0, 6);
+		partition(list, 2, 7);
 	}
 	
 	public static void partition(int[] list1, int front, int back)
@@ -42,7 +42,15 @@ public class ArrayMethods4
 	
 	public static void quickSort(int[] list1, int front, int back)
 	{
-		
+		if(front == back)
+		{
+			printArray(list1);
+		}
+		else
+		{
+			quickSort(list1, partition(list1, front, back), back);
+			quickSort(list1, front, partition(list1, front, back));
+		}
 	}
 	
 	
