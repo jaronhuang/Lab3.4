@@ -4,7 +4,7 @@ public class ArrayMethods4
 {
 	public static void main(String[] args)
 	{
-		int[] list = {1, 7, 4, 3, 8, 2, 9}; //7, 4, 3, 8, 2
+		int[] list = {1, 7, 4, 3, 8, 2, 9}; //4, 3, 8, 2, 9
 		partition(list, 2, 7);
 	}
 	
@@ -22,16 +22,16 @@ public class ArrayMethods4
 		{
 			if (list1[i] < list1[pivotPos])
 			{
-				for (int j = 0; j < pivotPos; j++)
+				for (int j = i; j > pivotPos; j--)
 				{
-					if (list1[i] > list1[pivotPos])
-					{
-						swap(list1, i, j);
-					}
-					else
+					if (j - 1 == pivotPos)
 					{
 						swap(list1, i, pivotPos);
 						pivotPos = i;
+					}
+					if (list1[i] < list1[j])
+					{
+						swap(list1, i, j);
 					}
 				}
 			}
